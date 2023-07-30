@@ -1,4 +1,4 @@
 # Selenium for Geany
-- Put this file on ```.config/geany/colorschemes/```
+- Put this file into ```.config/geany/colorschemes/```
 - Change colorscheme
     -  ``` View -> Change Color Scheme... ```
