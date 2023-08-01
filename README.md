@@ -22,6 +22,16 @@
 ![#bpurple](https://via.placeholder.com/15/903696/000000?text=+)
 ![#bcyan](https://via.placeholder.com/15/369696/000000?text=+)
 
+## Name Terminology
+
+| Name    |  Explanation
+|-----------|-----------|
+|Selenium | Regular Theme |
+|Selenium-inverted | use bright colors as main and vice-versa |
+|Selenium-single| exclude bright colors and use only regular colors |
+|Selenium-light| light theme variants (switch bg and fg colors) |
+
+
 ## Programs
 
 | Name    | 
