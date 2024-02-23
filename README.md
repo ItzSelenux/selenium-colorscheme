@@ -29,6 +29,7 @@
 |Selenium | Regular Theme |
 |Selenium-inverted | use bright colors as main and vice-versa |
 |Selenium-single| exclude bright colors and use only regular colors |
+|Selenium-single-inverted | exclude regular colors and use only bright colors  |
 |Selenium-light| light theme variants (switch bg and fg colors) |
 
 
@@ -37,6 +38,7 @@
 | Name    | 
 |-----------|
 | [Geany](https://github.com/ItzSelenux/selenium-colorscheme/tree/main/geany)     |
+| [Konsole](https://github.com/ItzSelenux/selenium-colorscheme/tree/main/konsole) |
 | [ST](https://github.com/ItzSelenux/selenium-colorscheme/tree/main/st)           |
 | [Termux](https://github.com/ItzSelenux/selenium-colorscheme/tree/main/termux)   |
 | [URXVT](https://github.com/ItzSelenux/selenium-colorscheme/tree/main/urxvt)     |
