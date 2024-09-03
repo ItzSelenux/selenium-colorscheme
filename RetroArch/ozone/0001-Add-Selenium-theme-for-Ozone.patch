@@ -1,0 +1,201 @@
+From 46a23f541814c381789014fe638a3eed9468d9a8 Mon Sep 17 00:00:00 2001
+From: ItzSelenux <support@ItzSelenux.com>
+Date: Tue, 3 Sep 2024 14:43:19 -0600
+Subject: [PATCH] Add Selenium theme for Ozone
+
+---
+ intl/msg_hash_us.h   |  4 +++
+ menu/drivers/ozone.c | 70 ++++++++++++++++++++++++++++++++++++++++++++
+ menu/menu_defines.h  |  1 +
+ menu/menu_setting.c  |  5 ++++
+ msg_hash.h           |  1 +
+ 5 files changed, 81 insertions(+)
+
+diff --git a/intl/msg_hash_us.h b/intl/msg_hash_us.h
+index dcd364b..df2c13d 100644
+--- a/intl/msg_hash_us.h
++++ b/intl/msg_hash_us.h
+@@ -12304,6 +12304,10 @@ MSG_HASH(
+    MENU_ENUM_LABEL_VALUE_OZONE_COLOR_THEME_DRACULA,
+    "Dracula"
+    )
++MSG_HASH(
++   MENU_ENUM_LABEL_VALUE_OZONE_COLOR_THEME_SELENIUM,
++   "Selenium"
++   )
+ MSG_HASH(
+    MENU_ENUM_LABEL_VALUE_OZONE_COLOR_THEME_SOLARIZED_DARK,
+    "Solarized Dark"
+diff --git a/menu/drivers/ozone.c b/menu/drivers/ozone.c
+index 7635f19..8849d02 100644
+--- a/menu/drivers/ozone.c
++++ b/menu/drivers/ozone.c
+@@ -766,6 +766,13 @@ static float ozone_sidebar_gradient_bottom_dracula[16]                = {
+    0.2666666f, 0.2784314f, 0.3529412f, 1.0f,
+ };
+ 
++static float ozone_sidebar_gradient_top_selenium[16]            = {
++   0.1019608f, 0.1019608f, 0.1019608f, 1.0f,
++   0.1019608f, 0.1019608f, 0.1019608f, 1.0f,
++   0.1019608f, 0.1019608f, 0.1019608f, 1.0f,
++   0.1019608f, 0.1019608f, 0.1019608f, 1.0f,
++};
++
+ static float ozone_sidebar_gradient_top_solarized_dark[16]            = {
+    0.0000000f, 0.1294118f, 0.1725490f, 1.0f,
+    0.0000000f, 0.1294118f, 0.1725490f, 1.0f,
+@@ -773,6 +780,12 @@ static float ozone_sidebar_gradient_top_solarized_dark[16]            = {
+    0.0000000f, 0.1294118f, 0.1725490f, 1.0f,
+ };
+ 
++static float ozone_sidebar_gradient_bottom_selenium[16]         = {
++   0.1019608f, 0.1019608f, 0.1019608f, 1.0f,
++   0.1019608f, 0.1019608f, 0.1019608f, 1.0f,
++   0.1019608f, 0.1019608f, 0.1019608f, 1.0f,
++   0.1019608f, 0.1019608f, 0.1019608f, 1.0f,
++};
+ static float ozone_sidebar_gradient_bottom_solarized_dark[16]         = {
+    0.0000000f, 0.1294118f, 0.1725490f, 1.0f,
+    0.0000000f, 0.1294118f, 0.1725490f, 1.0f,
+@@ -856,6 +869,12 @@ static float ozone_sidebar_background_dracula[16]                     = {
+    0.2666666f, 0.2784314f, 0.3529412f, 1.0f,
+ };
+ 
++static float ozone_sidebar_background_selenium[16]              = {
++   0.1019608f, 0.1019608f, 0.1019608f, 1.0f,
++   0.1019608f, 0.1019608f, 0.1019608f, 1.0f,
++   0.1019608f, 0.1019608f, 0.1019608f, 1.0f,
++   0.1019608f, 0.1019608f, 0.1019608f, 1.0f,
++};
+ static float ozone_sidebar_background_solarized_dark[16]              = {
+    0.0000000f, 0.1294118f, 0.1725490f, 1.0f,
+    0.0000000f, 0.1294118f, 0.1725490f, 1.0f,
+@@ -939,6 +958,12 @@ static float ozone_background_libretro_running_dracula[16]            = {
+    0.1568627f, 0.1647058f, 0.2117647f, 1.0f,
+ };
+ 
++static float ozone_background_libretro_running_selenium[16]     = {
++   0.1647059f, 0.1647059f, 0.1647059f, 1.0f,
++   0.1647059f, 0.1647059f, 0.1647059f, 1.0f,
++   0.1647059f, 0.1647059f, 0.1647059f, 1.0f,
++   0.1647059f, 0.1647059f, 0.1647059f, 1.0f,
++};
+ static float ozone_background_libretro_running_solarized_dark[16]     = {
+    0.0000000f, 0.1294118f, 0.1725490f, .85f,
+    0.0000000f, 0.1294118f, 0.1725490f, .85f,
+@@ -986,6 +1011,9 @@ static float ozone_border_1_twilight_zone[16]      = COLOR_HEX_TO_FLOAT(0x9B61CC
+ static float ozone_border_0_dracula[16]            = COLOR_HEX_TO_FLOAT(0xC3A0E0, 1.0f);
+ static float ozone_border_1_dracula[16]            = COLOR_HEX_TO_FLOAT(0x9B61CC, 1.0f);
+ 
++static float ozone_border_0_selenium[16]           = COLOR_HEX_TO_FLOAT(0x91a666, 1.0f);
++static float ozone_border_1_selenium[16]           = COLOR_HEX_TO_FLOAT(0x566646, 1.0f);
++
+ static float ozone_border_0_solarized_dark[16]     = COLOR_HEX_TO_FLOAT(0x67ECE2, 1.0f);
+ static float ozone_border_1_solarized_dark[16]     = COLOR_HEX_TO_FLOAT(0x2AA198, 1.0f);
+ 
+@@ -1289,6 +1317,44 @@ static ozone_theme_t ozone_theme_dracula = {
+    "dracula"                                             /* name */
+ };
+ 
++static ozone_theme_t ozone_theme_selenium = {
++   /* Background color */
++   COLOR_HEX_TO_FLOAT(0x2a2a2a, 1.0f),                   /* background */
++   ozone_background_libretro_running_selenium,     /* background_libretro_running */
++
++   /* Float colors for quads and icons */
++   COLOR_HEX_TO_FLOAT(0x6c6c6c, 1.0f),                   /* header_footer_separator */
++   COLOR_HEX_TO_FLOAT(0xa6a6a6, 1.0f),                   /* text */
++   COLOR_HEX_TO_FLOAT(0x566646, 1.0f),                   /* selection */
++   COLOR_HEX_TO_FLOAT(0x91a666, 1.0f),                   /* selection_border */
++   COLOR_HEX_TO_FLOAT(0x666666, 1.0f),                   /* entries_border */
++   COLOR_HEX_TO_FLOAT(0xa6a6a6, 1.0f),                   /* entries_icon */
++   COLOR_HEX_TO_FLOAT(0x91a666, 1.0f),                   /* text_selected */
++   COLOR_HEX_TO_FLOAT(0x1a1a1a, 1.0f),                   /* message_background */
++
++   /* RGBA colors for text */
++   0xA6A6A6FF,                                           /* text_rgba */
++   0xA6A6A6FF,                                           /* text_sidebar_rgba */
++   0x91a666FF,                                           /* text_selected_rgba */
++   0x666666FF,                                           /* text_sublabel_rgba */
++
++   /* Screensaver 'tint' (RGB24) */
++   0x1a1a1a,                                             /* screensaver_tint */
++
++   /* Sidebar color */
++   ozone_sidebar_background_selenium,              /* sidebar_background */
++   ozone_sidebar_gradient_top_selenium,            /* sidebar_top_gradient */
++   ozone_sidebar_gradient_bottom_selenium,         /* sidebar_bottom_gradient */
++
++   /* Fancy cursor colors */
++   ozone_border_0_selenium,                        /* cursor_border_0 */
++   ozone_border_1_selenium,                        /* cursor_border_1 */
++
++   {0},                                                  /* textures */
++
++   "selenium"                                            /* name */
++};
++
+ static ozone_theme_t ozone_theme_solarized_dark = {
+    /* Background color */
+    COLOR_HEX_TO_FLOAT(0x002B36, 1.0f),                   /* background */
+@@ -1491,6 +1557,7 @@ static ozone_theme_t *ozone_themes[] = {
+    &ozone_theme_hacking_the_kernel,
+    &ozone_theme_twilight_zone,
+    &ozone_theme_dracula,
++   &ozone_theme_selenium,
+    &ozone_theme_solarized_dark,
+    &ozone_theme_solarized_light,
+    &ozone_theme_gray_dark,
+@@ -1615,6 +1682,9 @@ static void ozone_set_color_theme(
+       case OZONE_COLOR_THEME_DRACULA:
+          theme = &ozone_theme_dracula;
+          break;
++      case OZONE_COLOR_THEME_SELENIUM:
++         theme = &ozone_theme_selenium;
++		break;
+       case OZONE_COLOR_THEME_SOLARIZED_DARK:
+          theme = &ozone_theme_solarized_dark;
+          break;
+diff --git a/menu/menu_defines.h b/menu/menu_defines.h
+index 571454d..e595b32 100644
+--- a/menu/menu_defines.h
++++ b/menu/menu_defines.h
+@@ -429,6 +429,7 @@ enum ozone_color_theme
+    OZONE_COLOR_THEME_HACKING_THE_KERNEL,
+    OZONE_COLOR_THEME_TWILIGHT_ZONE,
+    OZONE_COLOR_THEME_DRACULA,
++   OZONE_COLOR_THEME_SELENIUM,
+    OZONE_COLOR_THEME_SOLARIZED_DARK,
+    OZONE_COLOR_THEME_SOLARIZED_LIGHT,
+    OZONE_COLOR_THEME_GRAY_DARK,
+diff --git a/menu/menu_setting.c b/menu/menu_setting.c
+index 3a92ade..ce3b1aa 100644
+--- a/menu/menu_setting.c
++++ b/menu/menu_setting.c
+@@ -4770,6 +4770,11 @@ static void setting_get_string_representation_uint_ozone_menu_color_theme(
+                msg_hash_to_str(
+                   MENU_ENUM_LABEL_VALUE_OZONE_COLOR_THEME_DRACULA), len);
+          break;
++      case OZONE_COLOR_THEME_SELENIUM:
++         strlcpy(s,
++               msg_hash_to_str(
++                  MENU_ENUM_LABEL_VALUE_OZONE_COLOR_THEME_SELENIUM), len);
++         break;
+       case OZONE_COLOR_THEME_SOLARIZED_DARK:
+          strlcpy(s,
+                msg_hash_to_str(
+diff --git a/msg_hash.h b/msg_hash.h
+index b10a008..45fc2b0 100644
+--- a/msg_hash.h
++++ b/msg_hash.h
+@@ -725,6 +725,7 @@ enum msg_hash_enums
+    MENU_ENUM_LABEL_VALUE_OZONE_COLOR_THEME_HACKING_THE_KERNEL,
+    MENU_ENUM_LABEL_VALUE_OZONE_COLOR_THEME_TWILIGHT_ZONE,
+    MENU_ENUM_LABEL_VALUE_OZONE_COLOR_THEME_DRACULA,
++   MENU_ENUM_LABEL_VALUE_OZONE_COLOR_THEME_SELENIUM,
+    MENU_ENUM_LABEL_VALUE_OZONE_COLOR_THEME_SOLARIZED_DARK,
+    MENU_ENUM_LABEL_VALUE_OZONE_COLOR_THEME_SOLARIZED_LIGHT,
+    MENU_ENUM_LABEL_VALUE_OZONE_COLOR_THEME_GRAY_DARK,
+-- 
+2.46.0
+
