@@ -32,15 +32,17 @@
 | ![#bg](https://via.placeholder.com/15/a6a6a6/000000?text=+) | FG (Gray Lightest)     | `#a6a6a6`  |
 | ![#bg](https://via.placeholder.com/15/666666/000000?text=+) | BG2 (Gray Light) | `#1a1a1a`  |
 | ![#red](https://via.placeholder.com/15/a66966/000000?text=+) | Red        | `#a66966`  |
+| ![#orange](https://via.placeholder.com/15/c66626/000000?text=+) | Orange        | `#c66626`  |
 | ![#green](https://via.placeholder.com/15/91a666/000000?text=+) | Green      | `#91a666`  |
 | ![#yellow](https://via.placeholder.com/15/a69c66/000000?text=+) | Yellow     | `#a69c66`  |
 | ![#blue](https://via.placeholder.com/15/6677a6/000000?text=+) | Blue       | `#6677a6`  |
 | ![#purple](https://via.placeholder.com/15/9a66a6/000000?text=+) | Purple     | `#9a66a6`  |
 | ![#cyan](https://via.placeholder.com/15/66a6aa/000000?text=+) | Cyan       | `#66a6aa`  |
 | ![#bred](https://via.placeholder.com/15/963636/000000?text=+) | Bright Red | `#963636`  |
+| ![#borange](https://via.placeholder.com/15/965636/000000?text=+) | Bright Orange | `#965636`  |
 | ![#bgreen](https://via.placeholder.com/15/669636/000000?text=+) | Bright Green | `#669636` |
 | ![#byellow](https://via.placeholder.com/15/969336/000000?text=+) | Bright Yellow | `#969336` |
-| ![#bblue](https://via.placeholder.com/15/363996/000000?text=+) | Bright Blue | `#363996` |
+| ![#bblue](https://via.placeholder.com/15/0c7d9d/000000?text=+) | Bright Blue | `#0c7d9d` |
 | ![#bpurple](https://via.placeholder.com/15/903696/000000?text=+) | Bright Purple | `#903696` |
 | ![#bcyan](https://via.placeholder.com/15/369696/000000?text=+) | Bright Cyan | `#369696` |
 
