@@ -1,0 +1,26 @@
+{
+  "name": "selenium-colorscheme",
+  "publisher": "ItzSelenux",
+  "displayName": "Selenium Colorscheme",
+  "description": "A colorscheme with dark gray background, pale lettering and green accent color. For VSCode",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Selenium",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Selenium-color-theme.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "@vscode/vsce": "^2.32.0",
+    "vsce": "^2.15.0"
+  }
+}

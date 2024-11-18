@@ -1,6 +1,10 @@
 # Selenium
  eye-nice colorscheme
 
+A colorscheme with dark gray background, pale lettering and green accent color. For VSCode
+
+visit https://github.com/ItzSelenux/selenium-colorscheme for more information
+
 ![#bg](https://via.placeholder.com/15/1a1a1a/000000?text=+)
 ![#dark grey](https://via.placeholder.com/15/2a2a2a/000000?text=+)
 ![#grey](https://via.placeholder.com/15/3a3a3a/000000?text=+)
@@ -46,27 +50,3 @@
 | ![#bpurple](https://via.placeholder.com/15/903696/000000?text=+) | Bright Purple | `#903696` |
 | ![#bcyan](https://via.placeholder.com/15/369696/000000?text=+) | Bright Cyan | `#369696` |
 
-## Name Terminology
-
-| Name    |  Explanation
-|-----------|-----------|
-|Selenium | Regular Theme |
-|Selenium-inverted | use bright colors as main and vice-versa |
-|Selenium-single| exclude bright colors and use only regular colors |
-|Selenium-single-inverted | exclude regular colors and use only bright colors  |
-|Selenium-light| light theme variants (switch bg and fg colors) |
-
-> [!NOTE]
-> Not all programs provide all variants, some programs only provide selenium-single as option
-
-## Programs
-
-Here’s a revised table reflecting your updated structure:
-
-## Programs
-
-| Category     | Programs                                                                                              |
-|--------------|------------------------------------------------------------------------------------------------------|
-| **Editors**  | [Geany](https://github.com/ItzSelenux/selenium-colorscheme/tree/main/editors/geany), [Kate/KDevelop/KWrite](https://github.com/ItzSelenux/selenium-colorscheme/tree/main/editors/kate-kdevelop-kwrite), [VSCode](https://github.com/ItzSelenux/selenium-colorscheme/tree/main/editors/vscode), [Xed](https://github.com/ItzSelenux/selenium-colorscheme/tree/main/editors/xed) |
- **Terminals**| [Alacritty](https://github.com/ItzSelenux/selenium-colorscheme/tree/main/terminals/alacritty), [Konsole](https://github.com/ItzSelenux/selenium-colorscheme/tree/main/terminals/konsole), [ST](https://github.com/ItzSelenux/selenium-colorscheme/tree/main/terminals/st), [Termux](https://github.com/ItzSelenux/selenium-colorscheme/tree/main/terminals/termux), [Tilix](https://github.com/ItzSelenux/selenium-colorscheme/tree/main/terminals/tilix), [URXVT](https://github.com/ItzSelenux/selenium-colorscheme/tree/main/terminals/urxvt), [Xterm](https://github.com/ItzSelenux/selenium-colorscheme/tree/main/terminals/xterm), [TTY/VT](https://github.com/ItzSelenux/selenium-colorscheme/tree/main/other/tty-vt)  |
-| **Toolkits** | [Qt6CT](https://github.com/ItzSelenux/selenium-colorscheme/tree/main/toolkits/qt6ct) [RetroArch](https://github.com/ItzSelenux/selenium-colorscheme/tree/main/toolkits/retroarch), [Vivaldi](https://github.com/ItzSelenux/selenium-colorscheme/tree/main/toolkits/vivaldi), [Wine](https://github.com/ItzSelenux/selenium-colorscheme/tree/main/toolkits/wine) |

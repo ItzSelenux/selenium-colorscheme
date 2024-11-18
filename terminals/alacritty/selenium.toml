@@ -1,0 +1,22 @@
+# Selenium Colorscheme by ItsZariep
+[colors.primary]
+background = '#2a2a2a'
+foreground = '#a6a6a6'
+[colors.normal]
+black = '#1a1a1a'
+red = '#a66966'
+green = '#91a666'
+yellow = '#a69c66'
+blue = '#6677a6'
+magenta = '#9a66a6'
+cyan = '#66a6aa'
+white = '#a6a6a6'
+[colors.bright]
+black = '#1a1a1a'
+red = '#a66966'
+green = '#91a666'
+yellow = '#a69c66'
+blue = '#6677a6'
+magenta = '#9a66a6'
+cyan = '#66a6aa'
+white = '#a6a6a6'
